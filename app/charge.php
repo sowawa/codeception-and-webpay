@@ -25,6 +25,7 @@ try {
 } catch (\WebPay\ErrorResponse\CardException $e) {
     $data = $e->getData()->error;
     // カードが拒否された場合
+    header('Content-Type: text/plain; charset=utf-8');
     print('Status is:' . $e->getStatus() . "\n");
     print('Type is:' . $data->type . "\n");
     print('Code is:' . $data->code . "\n");
