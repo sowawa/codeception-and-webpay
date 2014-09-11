@@ -8,10 +8,12 @@ settings:
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
-modules:
+extensions:
+    enabled:
+        - Codeception\Extension\PhpBuiltinServer
     config:
-        Db:
-            dsn: ''
-            user: ''
-            password: ''
-            dump: tests/_data/dump.sql
+        Codeception\Extension\PhpBuiltinServer:
+            hostname: localhost
+            port: 8000
+            documentRoot: tests/_data
+            router: tests/_data/webpay_double.php
