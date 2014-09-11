@@ -55,3 +55,12 @@ $I->see('お支払いありがとうございました');
 $I->see('お支払い金額: 800');
 $I->see('カード名義: TEST TEST');
 $I->see('カード番号: ****-****-****-4242');
+
+// リクエスト内容をチェック
+// seeInDataはデータ型も見る
+$I->loadRequest();
+$I->seeRequestTo('POST', '/charges');
+$I->seeInData('amount', 800);
+$I->seeInData('currency', 'jpy');
+$I->seeInData('card');  // cardパラメータが指定されていること
+$I->seeInData('description', 'PHP からのアイテムの購入');
