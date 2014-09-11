@@ -1,0 +1,10 @@
+{
+    "require": {
+        "webpay/webpay": "~2.1"
+    },
+    "require-dev": {
+        "codeception/codeception": "*",
+        "codeception/phpbuiltinserver": "*",
+        "predis/predis": "*"
+    }
+}
